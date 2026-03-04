@@ -188,8 +188,8 @@
         .hero-description {
             font-size: 1.2rem;
             color: var(--gray);
-            max-width: 700px;
-            margin-bottom: 3rem;
+            max-width: 1100px;
+            margin-bottom: 2rem;
             line-height: 1.8;
             animation: fadeIn 1s ease-out 0.8s both;
         }
@@ -237,7 +237,7 @@
 
         /* Section Styles */
         section {
-            padding: 6rem 5%;
+            padding: 3.5rem 5%;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -260,7 +260,7 @@
         .section-subtitle {
             color: var(--gray);
             font-size: 1.2rem;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
         }
 
         /* Skills Grid */
@@ -334,7 +334,7 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             padding: 2rem;
             background: var(--card-bg);
             backdrop-filter: blur(10px);
@@ -488,9 +488,325 @@
                 text-align: center;
             }
         }
-    </style>
+    
+/* === Layout polish === */
+.container{
+    max-width:1100px;
+    margin:0 auto;
+}
+
+section{
+    padding:3rem 5%;
+}
+
+.section-title{
+    margin-bottom:0.5rem;
+}
+
+.section-subtitle{
+    margin-bottom:1.5rem;
+}
+
+/* Align grids consistently */
+.skills-grid,
+.projects-grid{
+    max-width:1100px;
+    margin:0 auto;
+}
+
+/* Timeline width alignment */
+.timeline{
+    max-width:1000px;
+    margin:0 auto;
+}
+
+/* Project tiles visual polish */
+.project-card,
+.skill-category{
+    border-radius:10px;
+}
+
+/* Reduce extra gaps between sections */
+section + section{
+    margin-top:0.5rem;
+}
+
+
+/* Dashboard status bars */
+.status-item{
+margin-top:12px;
+}
+
+.status-label{
+font-size:0.9rem;
+margin-bottom:6px;
+}
+
+.status-bar{
+width:100%;
+height:8px;
+background:#1a2140;
+border-radius:6px;
+overflow:hidden;
+}
+
+.status-fill{
+height:100%;
+width:0%;
+background:#22c55e;
+transition:width 0.6s ease, background 0.6s ease;
+}
+
+
+/* ===== GLOBAL VISIBILITY FIX ===== */
+body, section, div, p, li, span, h1, h2, h3, h4 {
+    color:#e6edf3 !important;
+    opacity:1 !important;
+}
+
+/* Ensure cards are visible */
+.skill-category, .timeline-item, .project-card {
+    background:#0f172a !important;
+    border:1px solid rgba(255,255,255,0.08) !important;
+}
+
+/* Ensure lists are visible */
+.timeline-description li, .skill-tag {
+    color:#e6edf3 !important;
+}
+
+/* Fix headings */
+.section-title, .section-subtitle {
+    color:#e6edf3 !important;
+}
+
+
+/* Section title hover glow */
+.section-title{
+    transition: all 0.3s ease;
+}
+
+.section-title:hover{
+    color:#00e5ff;
+    text-shadow:0 0 8px rgba(0,229,255,0.6);
+}
+
+/* Divider under section titles */
+.section-title::after{
+    content:"";
+    display:block;
+    width:60px;
+    height:2px;
+    background:#00e5ff;
+    margin-top:8px;
+    opacity:0.6;
+}
+
+
+.typing-container{
+margin-top:10px;
+font-family: 'JetBrains Mono', monospace;
+color:#00e5ff;
+font-size:0.95rem;
+}
+
+
+/* ===== Subtle IT network line background (non‑intrusive) ===== */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+
+    background-image:
+        linear-gradient(rgba(0,229,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.06) 1px, transparent 1px);
+
+    background-size:120px 120px;
+    opacity:0.35;
+}
+
+/* faint glowing nodes */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+
+    background:
+        radial-gradient(circle at 20% 30%, rgba(0,229,255,0.15) 0px, transparent 4px),
+        radial-gradient(circle at 70% 40%, rgba(0,229,255,0.15) 0px, transparent 4px),
+        radial-gradient(circle at 40% 70%, rgba(0,229,255,0.15) 0px, transparent 4px),
+        radial-gradient(circle at 80% 80%, rgba(0,229,255,0.15) 0px, transparent 4px);
+}
+
+
+/* ===== Transparent IT icon background ===== */
+body::before{
+ content:"";
+ position:fixed;
+ inset:0;
+ z-index:-1;
+ pointer-events:none;
+
+ background-image:
+ url("https://www.svgrepo.com/show/452095/laptop.svg"),
+ url("https://www.svgrepo.com/show/452067/printer.svg"),
+ url("https://www.svgrepo.com/show/452070/router.svg"),
+ url("https://www.svgrepo.com/show/452093/desktop.svg"),
+ url("https://www.svgrepo.com/show/452086/ethernet.svg");
+
+ background-size:120px;
+ background-repeat:repeat;
+ opacity:0.035;
+ filter:brightness(0) invert(1);
+}
+
+
+/* ===== IT Monitoring Dashboard Bars ===== */
+.status-item{
+margin-top:12px;
+}
+
+.status-label{
+font-size:0.9rem;
+margin-bottom:6px;
+}
+
+.status-bar{
+width:100%;
+height:8px;
+background:#1a2140;
+border-radius:6px;
+overflow:hidden;
+}
+
+.status-fill{
+height:100%;
+width:0%;
+background:#22c55e;
+transition:width 0.6s ease, background 0.6s ease;
+}
+
+
+/* NOC status dots */
+.status-dot{
+display:inline-block;
+width:10px;
+height:10px;
+border-radius:50%;
+margin-right:8px;
+background:#22c55e;
+box-shadow:0 0 8px currentColor;
+animation:pulseDot 1.6s infinite;
+vertical-align:middle;
+}
+
+@keyframes pulseDot{
+0%{opacity:1; transform:scale(1);}
+50%{opacity:0.4; transform:scale(0.85);}
+100%{opacity:1; transform:scale(1);}
+}
+
+
+/* LIVE system monitor badge */
+.live-monitor{
+display:inline-flex;
+align-items:center;
+gap:8px;
+font-size:0.75rem;
+font-family:'JetBrains Mono', monospace;
+letter-spacing:1px;
+color:#22c55e;
+margin-bottom:10px;
+}
+
+.live-dot{
+width:8px;
+height:8px;
+border-radius:50%;
+background:#22c55e;
+box-shadow:0 0 8px #22c55e;
+animation:liveBlink 1.2s infinite;
+}
+
+@keyframes liveBlink{
+0%{opacity:1;}
+50%{opacity:0.2;}
+100%{opacity:1;}
+}
+
+
+
+.it-bg img{
+position:absolute;
+width:80px;
+
+filter:brightness(0) invert(1);
+}
+
+.it-bg img:nth-child(1){left:10%; top:20%; animation-duration:22s;}
+.it-bg img:nth-child(2){left:70%; top:10%; animation-duration:26s;}
+.it-bg img:nth-child(3){left:30%; top:75%; animation-duration:24s;}
+.it-bg img:nth-child(4){left:85%; top:60%; animation-duration:20s;}
+.it-bg img:nth-child(5){left:55%; top:40%; animation-duration:28s;}
+
+/* float animation removed */
+@keyframes floatIT_removed{
+0%{transform:translateY(0) rotate(0deg);}
+50%{transform:translateY(-40px) rotate(10deg);}
+100%{transform:translateY(0) rotate(0deg);}
+}
+
+/* ===== Skill Tile Proximity Glow ===== */
+.skill-category{
+position:relative;
+overflow:hidden;
+transition:all .25s ease;
+}
+
+.skill-category::before{
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(0,229,255,0.25), transparent 60%);
+opacity:0;
+transition:opacity .25s ease;
+pointer-events:none;
+}
+
+.skill-category:hover::before{
+opacity:1;
+}
+
+.skill-category:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 35px rgba(0,229,255,.25);
+border-color:#00e5ff;
+}
+
+
+
+
+50%{transform:translateY(-40px);}
+100%{transform:translateY(0px);}
+}
+
+50%{transform:translateY(-40px) rotate(8deg);}
+100%{transform:translateY(0px) rotate(0deg);}
+}
+
+</style>
 </head>
 <body>
+
+
+
+
+
+
     <div class="bg-animation"></div>
     <div class="grid-overlay"></div>
 
@@ -511,184 +827,295 @@
             <div class="hero-tag">// IT SUPPORT SPECIALIST</div>
             <h1>Hi, I'm <span class="gradient-text">Rahul Changrani</span></h1>
             <h2>Delivering Excellence in IT Support & Service Management</h2>
-            <p class="hero-description">
-                7+ years of hands-on experience providing Service Desk, Desktop Support, and IT Helpdesk operations 
-                within fast-paced global environments. Specialized in Azure AD, Active Directory, Microsoft 365, 
-                ServiceNow, and maintaining high SLA compliance across Windows/Mac platforms.
-            </p>
+
+
+            
+<p class="hero-description">
+IT Support Specialist / Service Desk Analyst with 7+ years of experience delivering enterprise-level IT Helpdesk, Desktop Support, and Technical Support for global users. Expertise in Azure Active Directory (Azure AD), Active Directory, Microsoft 365, ServiceNow, SCCM, VPN configuration, and Intune/MDM device management. Strong experience troubleshooting Windows and macOS environments, hardware, printers, networking, and conferencing tools while maintaining high SLA compliance and incident resolution efficiency. Proven ability to deliver remote end-user support, ticket management, and technical documentation, while leveraging PowerShell automation and AI-assisted development (Vibe Coding) to improve IT operations, productivity, and user experience.
+
+<div class="typing-container">
+<pre id="itTerminal" style="color:#00e5ff;font-family:'JetBrains Mono',monospace;">
+</pre>
+</div>
+
+
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary">Get In Touch</a>
                 <a href="#experience" class="btn btn-secondary">View Experience</a>
+                <a href="resume.pdf" download class="btn btn-secondary">Download Resume</a>
             </div>
         </div>
     </section>
 
-    <section id="skills">
-        <h2 class="section-title"><span>01.</span> Core Competencies</h2>
-        <p class="section-subtitle">Technical expertise spanning enterprise IT support and infrastructure</p>
+    
+
+<section id="skills">
+<h2 class="section-title"><span>01.</span> Core Competencies</h2>
+<p class="section-subtitle">Key technical strengths and support expertise</p>
+
+<div class="skills-grid fade-in">
+
+<div class="skill-category">
+<h3>🖥️ Service Desk & Support</h3>
+<div class="skill-list">
+<span class="skill-tag">Service Desk (L1/L2)</span>
+<span class="skill-tag">Desktop Support</span>
+<span class="skill-tag">IT Support Analyst</span>
+<span class="skill-tag">Remote Support</span>
+<span class="skill-tag">Global User Support</span>
+</div>
+</div>
+
+<div class="skill-category">
+<h3>🎫 ITSM & Ticketing</h3>
+<div class="skill-list">
+<span class="skill-tag">Incident Management</span>
+<span class="skill-tag">Request Management</span>
+<span class="skill-tag">Access Management</span>
+<span class="skill-tag">Ticket Triage</span>
+<span class="skill-tag">SLA Support</span>
+<span class="skill-tag">ServiceNow</span>
+<span class="skill-tag">Salesforce</span>
+<span class="skill-tag">Summit</span>
+<span class="skill-tag">ITIL</span>
+</div>
+</div>
+
+<div class="skill-category">
+<h3>🔐 Identity & Device Management</h3>
+<div class="skill-list">
+<span class="skill-tag">Azure AD</span>
+<span class="skill-tag">Active Directory</span>
+<span class="skill-tag">User Provisioning</span>
+<span class="skill-tag">Joiner/Mover/Leaver</span>
+<span class="skill-tag">Intune / MDM</span>
+</div>
+</div>
+
+<div class="skill-category">
+<h3>☁️ Microsoft 365</h3>
+<div class="skill-list">
+<span class="skill-tag">Outlook</span>
+<span class="skill-tag">Teams</span>
+<span class="skill-tag">Exchange</span>
+<span class="skill-tag">Email Troubleshooting</span>
+</div>
+</div>
+
+<div class="skill-category">
+<h3>💻 Systems & Applications</h3>
+<div class="skill-list">
+<span class="skill-tag">Windows Support</span>
+<span class="skill-tag">macOS Support</span>
+<span class="skill-tag">SCCM</span>
+<span class="skill-tag">Software Center</span>
+<span class="skill-tag">OS Installation</span>
+<span class="skill-tag">Device Setup</span>
+</div>
+</div>
+
+<div class="skill-category">
+<h3>🌐 Networking & Hardware</h3>
+<div class="skill-list">
+<span class="skill-tag">LAN / Wi‑Fi</span>
+<span class="skill-tag">VPN Troubleshooting</span>
+<span class="skill-tag">Printers</span>
+<span class="skill-tag">Peripheral Support</span>
+<span class="skill-tag">RJ45 / Ethernet</span>
+</div>
+</div>
+
+<div class="skill-category">
+<h3>⚙️ Automation & Documentation</h3>
+<div class="skill-list">
+<span class="skill-tag">Vibe Coding (AI-Assisted Dev)</span>
+<span class="skill-tag">PowerShell Automation</span>
+<span class="skill-tag">Knowledge Base / SOP</span>
+</div>
+</div>
+
+</div>
+</section>
+
+
+
+    
+<section id="experience">
+<h2 class="section-title"><span>02.</span> Professional Experience</h2>
+<p class="section-subtitle">7+ years of IT support excellence across global organizations</p>
+
+<div class="timeline fade-in">
+
+<div class="timeline-item">
+<div class="timeline-date">Jan 2023 – Jan 2025</div>
+<div class="timeline-role">Product Tester</div>
+<div class="timeline-company">Best Buy (Brampton Warehouse – DC) — Brampton, ON</div>
+<ul class="timeline-description">
+<li>Conducted testing of consumer electronics including laptops, gaming consoles, smartphones, cameras, speakers, and printers.</li>
+<li>Performed data wiping, formatting, and OS installations on various devices.</li>
+<li>Maintained quality standards and compliance with company procedures.</li>
+<li>Used internal Windows tools to track product location and inventory status.</li>
+<li>Managed product organization for order fulfillment operations.</li>
+<li>Assisted with additional technical and logistics tasks as required.</li>
+</ul>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-date">Mar 2022 – Oct 2022</div>
+<div class="timeline-role">Global IT – Service Desk Analyst</div>
+<div class="timeline-company">Lucy Electric Manufacturing & Technologies — Vadodara, Gujarat, India</div>
+<ul class="timeline-description">
+<li>Managed hybrid Azure AD / Active Directory user accounts for new hires and leavers.</li>
+<li>Provided L1 support for ~1000 global users resolving 15–20 tickets daily.</li>
+<li>Distributed applications using Software Center and MDM tools.</li>
+<li>Managed ServiceNow tickets and escalated P1/P2 incidents.</li>
+<li>Participated in major incident communications and outage updates.</li>
+<li>Configured Meraki guest Wi‑Fi and VPN for remote users.</li>
+<li>Granted folder and printer access permissions.</li>
+<li>Provided global support across Brazil, Thailand, China, Malaysia, South Africa, Saudi Arabia, UK, India, and UAE.</li>
+<li>Escalated LogicMonitor alerts for network/server issues.</li>
+<li>Troubleshot Outlook, printers, networks, conferencing and desktop issues.</li>
+</ul>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-date">Sep 2018 – Sep 2019 | Aug 2021 – Feb 2022</div>
+<div class="timeline-role">IT System Analyst</div>
+<div class="timeline-company">Ascendum KPS Pvt. Ltd — Ahmedabad, Gujarat, India</div>
+<ul class="timeline-description">
+<li>Managed domain and email credentials for employees.</li>
+<li>Ensured folder access permissions complied with policies.</li>
+<li>Assigned and tracked tickets using internal helpdesk systems.</li>
+<li>Monitored system performance and maintained updated specifications.</li>
+<li>Troubleshot LAN, Wi‑Fi, Outlook, conferencing and ISP issues.</li>
+<li>Conducted workstation rollouts and setups for new hires.</li>
+<li>Provided remote, phone and on‑site hardware/software troubleshooting.</li>
+</ul>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-date">Oct 2020 – Aug 2021</div>
+<div class="timeline-role">SR Technical Service Advisor (SR Service Desk Analyst)</div>
+<div class="timeline-company">Progressive Infotech Pvt. Ltd — Noida, UP, India</div>
+<ul class="timeline-description">
+<li>Managed domain/email credentials for employee onboarding and offboarding.</li>
+<li>Communicated with users and teams through email and ticketing systems.</li>
+<li>Created detailed tickets including screenshots and approval documentation.</li>
+<li>Assigned incidents to Server, Network, Application and Helpdesk teams.</li>
+<li>Handled P1/P2 maintenance communications and updates.</li>
+<li>Resolved customer issues by identifying user concerns and tone.</li>
+</ul>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-date">Sep 2019 – May 2020</div>
+<div class="timeline-role">Block Coordinator</div>
+<div class="timeline-company">Integrated Child Development Services (ICDS) — Anand, Gujarat, India</div>
+<ul class="timeline-description">
+<li>Provided phone‑based support for application software issues to 121 workers.</li>
+<li>Analyzed operational reports and coordinated updates with district officers.</li>
+<li>Coordinated daily activities with supervisors and field workers.</li>
+</ul>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-date">Feb 2018 – Aug 2018</div>
+<div class="timeline-role">Associate Technical Support</div>
+<div class="timeline-company">Collabera Services Pvt. Ltd — Vadodara, Gujarat, India</div>
+<ul class="timeline-description">
+<li>Supported Collabera applications via ARIA chatbot support platform.</li>
+<li>Provided L1 support for 1100–1200 users resolving 30–40 tickets daily.</li>
+<li>Delivered phone, chat and remote troubleshooting assistance.</li>
+<li>Provided floor support for desktops and printer hardware issues.</li>
+<li>Created tickets with detailed troubleshooting information.</li>
+</ul>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-date">Mar 2017 – Feb 2018</div>
+<div class="timeline-role">IT Support Analyst</div>
+<div class="timeline-company">Shree Kamdhenu Electronics Pvt. Ltd — Anand, Gujarat, India</div>
+<ul class="timeline-description">
+<li>Achieved 98% installation success for rural CAS systems.</li>
+<li>Trained system operators on application usage.</li>
+<li>Provided remote and phone support to field technicians.</li>
+<li>Developed online milk collection data system integrated with Amul portal.</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+
+    
+
+<section id="projects">
+    <h2 class="section-title"><span>03.</span> GitHub Projects</h2>
+    <p class="section-subtitle">Selected technical work and automation projects
+<div style="margin-top:20px;text-align:center;">
+
+</div>
+</p>
+
+    <div class="skills-grid fade-in">
+
+        <div class="skill-category">
+            <h3>Portfolio Development</h3>
+            <p style="color: var(--gray);">
+            Designed and deployed this responsive portfolio using HTML/CSS on GitHub Pages.
+            </p>
+        </div>
+
+        <div class="skill-category">
+            <h3>Automation & Development</h3>
+            <p style="color: var(--gray);">
+            PowerShell troubleshooting scripts and Telegram channel automation for auto‑forwarding content.
+            </p>
+        </div>
+
         
-        <div class="skills-grid fade-in">
-            <div class="skill-category">
-                <h3>Service Desk & Support</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">L1/L2 Support</span>
-                    <span class="skill-tag">Desktop Support</span>
-                    <span class="skill-tag">IT Helpdesk</span>
-                    <span class="skill-tag">Incident Management</span>
-                    <span class="skill-tag">Request Management</span>
-                    <span class="skill-tag">SLA Compliance</span>
-                    <span class="skill-tag">Ticket Triage</span>
-                    <span class="skill-tag">Remote Support</span>
-                </div>
-            </div>
 
-            <div class="skill-category">
-                <h3>ITSM & Ticketing</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">ServiceNow</span>
-                    <span class="skill-tag">Salesforce</span>
-                    <span class="skill-tag">Summit</span>
-                    <span class="skill-tag">ITIL</span>
-                    <span class="skill-tag">Problem Management</span>
-                    <span class="skill-tag">Access Management</span>
-                </div>
-            </div>
 
-            <div class="skill-category">
-                <h3>Identity & Access</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Azure AD</span>
-                    <span class="skill-tag">Active Directory</span>
-                    <span class="skill-tag">User Provisioning</span>
-                    <span class="skill-tag">Joiner/Mover/Leaver</span>
-                    <span class="skill-tag">MDM/Intune</span>
-                </div>
-            </div>
+<div class="skill-category">
+<div class="live-monitor"><span class="live-dot"></span>LIVE SYSTEM MONITOR</div><h3>System & Network Status</h3><p style='font-size:0.8rem;color:#9ca3af'>Real-time monitoring simulation</p>
 
-            <div class="skill-category">
-                <h3>Microsoft 365 Suite</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Outlook</span>
-                    <span class="skill-tag">Teams</span>
-                    <span class="skill-tag">Exchange</span>
-                    <span class="skill-tag">Email Troubleshooting</span>
-                    <span class="skill-tag">M365 Admin</span>
-                </div>
-            </div>
+<div class="status-item">
+<div class="status-label"><span id="systemHealthDot" class="status-dot"></span>System Health: <span id="systemHealthText">Loading...</span></div>
+<div class="status-bar">
+<div id="systemHealthBar" class="status-fill"></div>
+</div>
+</div>
 
-            <div class="skill-category">
-                <h3>Systems & Applications</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Windows OS</span>
-                    <span class="skill-tag">Mac OS</span>
-                    <span class="skill-tag">SCCM</span>
-                    <span class="skill-tag">Software Center</span>
-                    <span class="skill-tag">OS Installation</span>
-                    <span class="skill-tag">Device Imaging</span>
-                    <span class="skill-tag">Driver Management</span>
-                </div>
-            </div>
+<div class="status-item">
+<div class="status-label"><span id="networkLatencyDot" class="status-dot"></span>Network Latency: <span id="networkLatencyText">Loading...</span></div>
+<div class="status-bar">
+<div id="networkLatencyBar" class="status-fill"></div>
+</div>
+</div>
 
-            <div class="skill-category">
-                <h3>Network & Security</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">VPN Configuration</span>
-                    <span class="skill-tag">LAN/WiFi</span>
-                    <span class="skill-tag">Network Cabling</span>
-                    <span class="skill-tag">Meraki</span>
-                    <span class="skill-tag">LogicMonitor</span>
-                    <span class="skill-tag">RJ45/Ethernet</span>
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
 
-    <section id="experience">
-        <h2 class="section-title"><span>02.</span> Professional Experience</h2>
-        <p class="section-subtitle">7+ years of IT support excellence across global organizations</p>
-        
-        <div class="timeline fade-in">
-            <div class="timeline-item">
-                <div class="timeline-date">JAN 2023 – JAN 2025</div>
-                <div class="timeline-role">Product Tester</div>
-                <div class="timeline-company">Best Buy (Brampton Warehouse – DC) — Brampton, ON</div>
-                <ul class="timeline-description">
-                    <li>Conducted thorough testing of consumer electronics including computers, laptops, gaming consoles, smartphones, and printers</li>
-                    <li>Performed data wiping, formatting, and OS installations on various devices</li>
-                    <li>Led training sessions for new employees on electronic product testing procedures</li>
-                    <li>Played key role in quarterly warehouse sales by processing products for grading based on condition</li>
-                    <li>Managed product organization and inventory tracking using Windows programs</li>
-                </ul>
-            </div>
 
-            <div class="timeline-item">
-                <div class="timeline-date">MAR 2022 – OCT 2022</div>
-                <div class="timeline-role">Global IT – Service Desk Analyst</div>
-                <div class="timeline-company">Lucy Electric Manufacturing & Technologies — Global Support</div>
-                <ul class="timeline-description">
-                    <li>Provided L1 Service Desk support for ~1,000 global users, resolving 15–20 tickets daily with high SLA compliance</li>
-                    <li>Managed user provisioning in hybrid AD environment (Cloud & Windows-based) for new hires and departing employees</li>
-                    <li>Distributed applications via Software Centre Management Tool (MDM) across desktop and mobile platforms</li>
-                    <li>Managed ServiceNow ticketing platform and coordinated major incident communications with status tracking</li>
-                    <li>Configured guest Wi-Fi accounts using Meraki and set up VPNs for remote work users</li>
-                    <li>Provided global remote assistance across multiple countries including Brazil, Thailand, China, Malaysia, South Africa, UK, and India</li>
-                    <li>Escalated LogicMonitor alerts to relevant teams for network/server issues</li>
-                </ul>
-            </div>
+</div>
 
-            <div class="timeline-item">
-                <div class="timeline-date">AUG 2021 – FEB 2022</div>
-                <div class="timeline-role">IT System Engineer</div>
-                <div class="timeline-company">Ascendum KPS Pvt. Ltd</div>
-                <ul class="timeline-description">
-                    <li>Managed domain/email credentials and folder access compliance for enterprise users</li>
-                    <li>Monitored system performance and maintained up-to-date specifications</li>
-                    <li>Troubleshot LAN issues, wireless configurations, Outlook settings, and conferencing problems</li>
-                    <li>Conducted system rollouts for new hires and remote workers</li>
-                    <li>Provided comprehensive telephone, remote, and on-site hardware/software troubleshooting</li>
-                </ul>
-            </div>
 
-            <div class="timeline-item">
-                <div class="timeline-date">OCT 2020 – AUG 2021</div>
-                <div class="timeline-role">SR Technical Service Advisor (SR Service Desk Engineer)</div>
-                <div class="timeline-company">Progressive Infotech Pvt. Ltd</div>
-                <ul class="timeline-description">
-                    <li>Managed user access issues with detailed documentation including screenshots and approvals</li>
-                    <li>Assigned tickets to appropriate teams (Server/Network/Application/Helpdesk) based on priority</li>
-                    <li>Handled maintenance activity notices through P1/P2 tickets and email correspondence</li>
-                    <li>Provided customer support with strong communication and problem-solving skills</li>
-                </ul>
-            </div>
 
-            <div class="timeline-item">
-                <div class="timeline-date">FEB 2018 – AUG 2018</div>
-                <div class="timeline-role">Associate Technical Support</div>
-                <div class="timeline-company">Collabera Services Pvt. Ltd</div>
-                <ul class="timeline-description">
-                    <li>Provided L1 technical support to 1,100–1,200 users, resolving 30–40 tickets daily</li>
-                    <li>Delivered support via phone, chat, and remote assistance using Cisco VOIP</li>
-                    <li>Provided floor support for hardware troubleshooting including desktops and printers</li>
-                    <li>Functioned as 'Chatbot' Agent for Collabera Applications on ARIA platform</li>
-                </ul>
-            </div>
+</div>
 
-            <div class="timeline-item">
-                <div class="timeline-date">MAR 2017 – FEB 2018</div>
-                <div class="timeline-role">IT Support Engineer</div>
-                <div class="timeline-company">Shree Kamdhenu Electronics Pvt. Ltd</div>
-                <ul class="timeline-description">
-                    <li>Achieved 98% installation success rate in villages under the CAS project</li>
-                    <li>Trained system operators on software functionality</li>
-                    <li>Provided telephone and remote support to field technicians in rural dairy cooperatives</li>
-                    <li>Developed online milk collection system for updating daily data on Amul portal</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+</div>
 
-    <section id="contact">
-        <h2 class="section-title"><span>03.</span> Let's Connect</h2>
+
+
+    </div>
+</section>
+
+
+
+
+
+
+<section id="contact">
+        <h2 class="section-title"><span>04.</span> Let's Connect</h2>
         <p class="section-subtitle">Open to relocation across Canada • Available for immediate start</p>
         
         <div class="contact-grid fade-in">
@@ -701,8 +1128,7 @@
             <a href="tel:+19057834290" class="contact-card">
                 <div class="contact-icon">📱</div>
                 <h3>Phone</h3>
-                <p>+1 905 783 4290 <br>
-    +91 8000 599 019 <br></p>
+                <p>+1 905 783 4290<br>+91 8000 599 019</p>
             </a>
 
             <a href="https://linkedin.com/in/rahul-changrani-24b652148" target="_blank" class="contact-card">
@@ -728,59 +1154,134 @@
         </div>
     </section>
 
-    <footer>
+    
+<footer>
         <p>&copy; 2025 Rahul Changrani. Designed with passion for IT excellence.</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">Ready to bring technical expertise to your team</p>
-    </footer>
 
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
+        <p style="margin-top:1rem;font-size:0.9rem;">
+        👀 Visitors:
+        <img src="https://visitor-badge.laobi.icu/badge?page_id=changranirahul-it.github.io" />
+        </p>
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+<div style="margin-top:20px;text-align:center;font-size:0.9rem;">
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+</div>
 
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</footer>
 
-        // Add active nav link on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
 
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+function updateSystemStatus(){
+
+const healthStates=[
+{text:"Excellent",color:"#22c55e",value:95},
+{text:"Optimal",color:"#16a34a",value:85},
+{text:"Moderate",color:"#eab308",value:60},
+{text:"Warning",color:"#f97316",value:40},
+{text:"Critical",color:"#ef4444",value:20}
+];
+
+const health=healthStates[Math.floor(Math.random()*healthStates.length)];
+const latency=Math.floor(Math.random()*70)+10;
+
+let latencyLabel="Good";
+let latencyColor="#22c55e";
+let latencyValue=85;
+
+if(latency>25 && latency<=45){
+ latencyLabel="Moderate";
+ latencyColor="#eab308";
+ latencyValue=60;
+}
+
+if(latency>45){
+ latencyLabel="Bad";
+ latencyColor="#ef4444";
+ latencyValue=35;
+}
+
+document.getElementById("systemHealthText").textContent=health.text;
+document.getElementById("systemHealthDot").style.background=health.color;
+document.getElementById("systemHealthDot").style.boxShadow="0 0 10px "+health.color;
+document.getElementById("systemHealthBar").style.width=health.value+"%";
+document.getElementById("systemHealthBar").style.background=health.color;
+
+document.getElementById("networkLatencyText").textContent=latency+" ms ("+latencyLabel+")";
+document.getElementById("networkLatencyDot").style.background=latencyColor;
+document.getElementById("networkLatencyDot").style.boxShadow="0 0 10px "+latencyColor;
+document.getElementById("networkLatencyBar").style.width=latencyValue+"%";
+document.getElementById("networkLatencyBar").style.background=latencyColor;
+
+}
+
+updateSystemStatus();
+setInterval(updateSystemStatus,3000);
+
+});
+</script>
+
+
+<script>
+const commands = [
+"> checking system status...",
+"> ping gateway 192.168.1.1",
+"> service desk ready",
+"> monitoring network traffic",
+"> powershell automation loaded"
+];
+
+let line = 0;
+let charIndex = 0;
+const terminal = document.getElementById("itTerminal");
+
+function typeLine(){
+ if(line >= commands.length){ line = 0; terminal.innerHTML=""; }
+ let text = commands[line];
+ terminal.innerHTML += text.charAt(charIndex);
+ charIndex++;
+
+ if(charIndex < text.length){
+   setTimeout(typeLine,40);
+ } else {
+   terminal.innerHTML += "\n";
+   charIndex = 0;
+   line++;
+   setTimeout(typeLine,600);
+ }
+}
+setTimeout(typeLine,500);
+</script>
+
+
+<script>
+document.querySelectorAll(".skill-category").forEach(tile=>{
+tile.addEventListener("mousemove",e=>{
+const rect = tile.getBoundingClientRect();
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+tile.style.setProperty("--x",x+"px");
+tile.style.setProperty("--y",y+"px");
+});
+});
+</script>
+
 </body>
 </html>
