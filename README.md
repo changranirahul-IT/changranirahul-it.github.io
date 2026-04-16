@@ -58,7 +58,7 @@ IT Support Specialist with 7+ years of hands-on experience providing Service Des
 - **Email:** [changrani.rahul@gmail.com](mailto:changrani.rahul@gmail.com)
 - **Phone:** [+1 905 783 4290](tel:+19057834290)
 - **LinkedIn:** [rahul-changrani-24b652148](https://linkedin.com/in/rahul-changrani-24b652148)
-- **Location:** Brampton, ON, Canada (Open to relocation)
+- **Location:** ON, Canada (Open to relocation)
 
 ---
 
